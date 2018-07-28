@@ -39,4 +39,15 @@ RUN apt-get install -y gconf-service \
       libnss3 \
       lsb-release \
       xdg-utils \
+      unzip \
+      fontconfig \
       wget
+
+# Japanese font
+RUN mkdir -p /tmp \
+      && cd /tmp \
+      && wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip \
+      && mkdir -p /usr/share/fonts/NotoSansCJKjp \
+      && unzip NotoSansCJKjp-hinted.zip -d /usr/share/fonts/NotoSansCJKjp/ \
+      && rm NotoSansCJKjp-hinted.zip \
+      && fc-cache -fv \
