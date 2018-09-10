@@ -1,4 +1,4 @@
-FROM node:10.9
+FROM node:10.10
 
 # @see https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
 RUN apt-get update -y
